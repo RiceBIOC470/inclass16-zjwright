@@ -69,11 +69,11 @@ peaks_matched{1}
 % matched, plot its position in frame 2 with a blue square, its position in
 % frame 1 with a red star, and connect these two with a green line. 
 figure(2);
-imshow(nfkb_2, [100 25000]); hold on;
+imshow(nfkb_2, [100 2000]); hold on;
 for ii=1:size(peaks{1});
-    plot(peaks{1}(ii,1), peaks{1}(ii,2), '*', 'Color', 'r', 'MarkerSize', 20);
+    text(peaks{1}(ii,1), peaks{1}(ii,2), int2str(ii), 'Color', 'r', 'FontSize', 18);
     nextind=peaks_matched{1}(ii,4);
     if nextind>0
-        plot(peaks{2}(nextind,1), peaks{2}(nextind,2), 's', 'Color', 'b', 'MarkerSize', 20);
+        text(peaks{2}(nextind,1), peaks{2}(nextind,2), int2str(ii), 'Color', 'b', 'FontSize', 18);
     end
 end
